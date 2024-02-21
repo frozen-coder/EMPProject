@@ -1,17 +1,19 @@
+//Node OpenAI package
 const OpenAI = require('openai');
 
 const openai = new OpenAI({
-    apiKey:"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",
+    apiKey:"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",
 });
 
-
+//Sends a fetch request
 const getResponse = async () => {
     const response = await openai.chat.completions.create ({
         model: 'gpt-3.5-turbo',
         messages: [
             {
                 role: 'user',
-                content: 'TasksToSchedual:Math,LA,breaks,3Meals(breakfast,lunch,dinner),BedAt9pmUpAt7am.ReturnOneLineWithJsonFormat(title:[StartTime,EndTime]).UseMilitaryTime.RemoveAllWhitespace',
+                //Input we are sending in
+                content: 'Tell me three great things about hackathons',
             },
         ],
         temperature: 0,
